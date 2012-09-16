@@ -1,0 +1,38 @@
+PhotonCrossSection:
+  url: "http://physics.nist.gov/cgi-bin/Xcom/xcom3_1"
+  head_offset: 3 # heads at the top of the table
+  defaults:
+    units: "cm^2/g"
+    dtype: "float"
+
+# Data Properties
+  properties: 
+    - Edge:
+          units: "None"
+          dtype: "None"
+    - PhotonEnergy:
+          units: "MeV"
+    - CoherentScattering:
+    - IncoherentScattering:
+    - PhotoElectricAbsorption:
+    - PairProductionInNuclearField:
+    - PairProductionInElectronField:
+    - TotalAttenuationWithCoherentScattering:
+    - TotalAttenuationWithoutCoherentScattering:
+
+# CGI Post Data
+# query: value
+# query: mapping: default
+  postdata:
+      ZNum:
+          atomic_number: 
+      OutOpt: "PIC"
+      Graph0: "on"
+      Graph6: "on"
+      WindowXmin:
+          min_energy: 0.001
+      WindowXMax:
+          max_energy: 100000
+      Output: "on"
+      Energies:
+      ResizeFlag: "on"
