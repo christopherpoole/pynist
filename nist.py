@@ -27,8 +27,8 @@ class NistData(object):
             
             setattr(self, val.keys()[0], v)
 
-       http = Http()
-       self._response, self._content = http.request(self.config["url"], "POST",
+        http = Http()
+        self._response, self._content = http.request(self.config["url"], "POST",
                                                     urlencode(self.postdata))
 
         self.tree = etree.HTML(self._content)
