@@ -27,23 +27,16 @@ class NistData(object):
             
             setattr(self, val.keys()[0], v)
 
-        self._fetch()
-        self._extract()
-        self._set()
- 
-    def _fetch(self):
        http = Http()
        self._response, self._content = http.request(self.config["url"], "POST",
                                                     urlencode(self.postdata))
 
-    def _extract(self):
         self.tree = etree.HTML(self._content)
         self.rows = list(self.tree.iter("tr"))
         self.data = [[r.text for r in row] for row in self.rows[self.config["head_offset"]:]]
 
         self.name = self.tree.iter("h2").next().text
 
-    def _set(self):
         for i, p in enumerate(self.config["properties"]):
             name = p.keys()[0]
             try:
