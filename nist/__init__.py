@@ -1,3 +1,5 @@
+import os
+
 from httplib2 import Http
 from urllib import urlencode
 from pprint import pprint
@@ -7,8 +9,8 @@ import yaml
 
 from lxml import etree
 
-
-schema = yaml.load(file("schema.yaml"))
+_dir =  os.path.split(__file__)[0]
+schema = yaml.load(file("%s/schema.yaml" % _dir))
 
 class NistData(object):
     def __init__(self, **kwargs):
