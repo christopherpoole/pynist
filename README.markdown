@@ -17,3 +17,10 @@ Data available includes:
     cross_section.PhotonEnergy
     cross_section.TotalAttenuationWithCoherentScattering
     cross_section.TotalAttenuationWithoutCoherentScattering
+
+Installation
+------------
+    git clone https://github.com/christopherpoole/pynist.git
+    cd pynist/
+    sudo python setup.py install
+
