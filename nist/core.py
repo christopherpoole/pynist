@@ -25,8 +25,8 @@ class NistData(object):
             v = val.values()[0]
             if kwargs[val.keys()[0]] is not None:
                 v = kwargs[val.keys()[0]]
-                self.postdata[key] = v
             
+            self.postdata[key] = v
             setattr(self, val.keys()[0], v)
 
         http = Http()
